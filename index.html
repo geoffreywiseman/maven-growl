@@ -4,7 +4,7 @@
   </head>
   <body>
     <h1>maven-growl</h1>
-    <p align="center"><img href="http://github.com/geoffreywiseman/maven-growl/raw/master/resources/maven-growl-failure.jpg"><img href="http://github.com/geoffreywiseman/maven-growl/raw/master/resources/maven-growl-success.jpg"></p>
+    <p align="center"><img src="http://github.com/geoffreywiseman/maven-growl/raw/master/resources/maven-growl-failure.jpg"><img src="http://github.com/geoffreywiseman/maven-growl/raw/master/resources/maven-growl-success.jpg"></p>
     <h2>The Problem</h2>
     <p>If you spend time in Maven, then you're probably using Java or at least significant parts of the Java platform,
       and you're probably familiar with builds that take a while to run.  If your build takes longer than a few seconds
@@ -17,16 +17,24 @@
     <p>If you're developing on the OS X platform, you're probably already familiar with Growl.  Growl is configurable,
       powerful, and pervasive.  Many applications you're already using integrate with Growl to send notifications.  It
       would be nice if Maven could integrate with Growl as well.</p>
-    <h3>Solutions</h3>
+    <h2>Solutions</h2>
     <p>If you're already using Maven 3.x and the Maven shell,
       you're in luck, <a href="http://twitter.com/jvanzyl/status/6556200652">@jvanzyl says</a> that the shell already 
       supports growl notifications using <a href="http://github.com/jdillon/grrrowl">grrrowl</a>. For the rest of us,
       some kind of bridge is needed to pipe Maven status into Growl.</p>
     <p>A quick Google search will show you that there are already some approaches to bridge Maven to Growl.  You could
       <a href="http://blank.jasonwhaley.com/2009/02/growl-maven-integration.html">use awk to parse the Maven build output</a>,
-      and then call <a href="">growlnotify"</a> to send a notification.</p>
+      and then call <a href="http://growl.info/documentation/growlnotify.php">growlnotify"</a> to send a notification.</p>
     <p>Using awk works, but it seems like the exit code from Maven (0==success, >0==failure) is simpler to parse,
       so I've written up a short bash script that executes Maven, checks the return code, then calls growlnotify
       with success/failure messages and a simple red/green image.</p>
-  </body>
+    <h2>Using maven-growl</h2>
+    <p>This isn't a finished product, it's a very small set of files that you can use to assemble your own solution.  Start
+      by taking a look at <a href="http://github.com/geoffreywiseman/maven-growl/blob/master/gmvn">the simple bash script</a> 
+      I'm using to invoke Maven and call growlnotify. You could put this somewhere in your path, or write a script of
+      your own.  If you want to use the <a href="http://github.com/geoffreywiseman/maven-growl/blob/master/resources">images</a>,
+      put those somewhere and modify the script to find them.  You'll also need to install 
+      <a href="http://growl.info/documentation/growlnotify.php">growlnotify</a>, an optional install
+      that comes in the extras with Growl.  That's basically it, you're done.</p>
+    </body>
 </html>
