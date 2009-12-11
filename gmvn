@@ -1,0 +1,8 @@
+#!/bin/bash
+mvn $*
+if [ $? -gt 0 ]
+then
+    echo "Build failed!" | growlnotify "Maven" --image ~/scripts/resources/maven-growl-failure.jpg
+else
+    echo "Build completed successfully." | growlnotify "Maven" --image ~/scripts/resources/maven-growl-success.jpg
+fi

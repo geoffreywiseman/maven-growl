@@ -1,0 +1,20 @@
+# maven-growl
+
+If you're building projects with Maven, you're most likely building Java projects,
+or projects that heavily use some parts of the Java platform, and you're likely
+familiar with longer builds.
+
+If your project takes more than a small number of seconds to build, there's a significant
+chance that after triggering a build, you switch your attention to something else -- you 
+check your email, you read news, you do something to pass the time.  If your build fails
+quickly, you might not notice the failure for several minutes because you're busy looking
+at something else.  Accordingly, it's helpful to get notifications that can let you know
+that the build is complete or has failed, so that you can get back to the task at hand,
+building software, as soon as possible.
+
+On the OS X platform, if you want to send a notification, far and away the most common
+system for doing so is Growl.  There are no Maven plugins for sending Growl notifications
+(although apparently the Maven 3.x shell has integrated Growl), so I built a simple script
+to bridge Maven with Growl, and built a couple simple images to use in the notifications.
+
+
