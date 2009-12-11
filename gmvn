@@ -2,7 +2,7 @@
 mvn $*
 if [ $? -gt 0 ]
 then
-    echo "Build failed!" | growlnotify "Maven" --image ~/scripts/resources/maven-growl-failure.jpg
+    echo "Build failed!" | growlnotify "Maven" --image ~/scripts/resources/maven-growl-failure.jpg > /dev/null 2>&1
 else
-    echo "Build completed successfully." | growlnotify "Maven" --image ~/scripts/resources/maven-growl-success.jpg
+    echo "Build completed successfully." | growlnotify "Maven" --image ~/scripts/resources/maven-growl-success.jpg > /dev/null 2>&1
 fi
