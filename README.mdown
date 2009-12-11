@@ -17,4 +17,17 @@ system for doing so is Growl.  There are no Maven plugins for sending Growl noti
 (although apparently the Maven 3.x shell has integrated Growl), so I built a simple script
 to bridge Maven with Growl, and built a couple simple images to use in the notifications.
 
+## Using maven-growl
 
+The {{gmvn}} script can be used to invoke maven, and based on the exit code from Maven,
+invoke a failure or success notification.
+
+The {{resources}} folder contains the icons I've used in notifications, which were
+exported from the {{maven-growl.psd}} photoshop file.  
+
+## License
+I haven't officially put together any kind of license for this.  It's safe to say that
+I have no plans to exert any kind of control over this.  If it's useful to you, feel
+free to use the script, the images or the photoshop file, even if you plan on using
+it commercially.  If it breaks your code, reformats your hard drive or burns down your
+house, I take no responsibility and offer no warranty.
