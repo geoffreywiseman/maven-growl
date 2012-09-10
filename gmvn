@@ -8,11 +8,6 @@
 # the directory in which it was run (in case there are multiple builds running concurrently).
 #
 
-# Run Maven
-function execute_maven {
-	mvn $*
-}
-
 # Print the header comment from this file, ducking the shebang line, and stopping a the first line that doesn't start with a hash
 function print_header_comment {
         awk '/^# / { print substr( $0, 3 ) }; $0 !~ /^#/ { exit }' $0
@@ -32,6 +27,6 @@ function notify {
 if [ $# == 0 ]; then
   print_header_comment
 else
-	execute_maven $*
+	mvn $*
 	notify $?
 fi
