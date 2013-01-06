@@ -17,9 +17,9 @@ function print_header_comment {
 function notify {
 	local PROJECT=${PWD##*/}
 	if [ $1 -eq 0 ]; then
-		echo "Build '$PROJECT' completed successfully." | growlnotify "Maven" --name maven --image ~/bin/assets/maven-growl-success.jpg > /dev/null 2>&1
+		echo "Build '$PROJECT' completed successfully." | growlnotify "Maven" --name maven --image ~/bin/resources/maven-growl-success.jpg > /dev/null 2>&1
 	else
-		echo "Build '$PROJECT' failed!" | growlnotify "Maven" --name maven --image ~/bin/assets/maven-growl-failure.jpg > /dev/null 2>&1
+		echo "Build '$PROJECT' failed!" | growlnotify "Maven" --name maven --image ~/bin/resources/maven-growl-failure.jpg > /dev/null 2>&1
 	fi
 }
 
